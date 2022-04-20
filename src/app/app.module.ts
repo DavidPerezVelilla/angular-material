@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './shared/material.module';
 
+
+
+
+const routes: Routes=[
+  {path: 'demo', loadChildren: () => import('./demo/demo.module').then(m=>m.DemoModule)},
+  {path: '**' , redirectTo: 'demo'},
+];
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +19,9 @@ import { MaterialModule } from './shared/material.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    RouterModule.forRoot(routes),
+
+
 
   ],
   providers: [],
