@@ -39,7 +39,7 @@ export class SidenavComponent implements OnInit {
 
     this.router.events.subscribe(() =>{
       if (this.isScreenSmall){
-        //cerrar el sidenav
+
         this.sidenav?.close()
       }
     })
