@@ -6,7 +6,7 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 import { MaterialModule } from '../shared/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule,Routes } from '@angular/router';
 import { UserService } from './service/user.service';
@@ -37,6 +37,7 @@ const routes: Routes=[
     CommonModule,
     FlexLayoutModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     RouterModule.forChild(routes),
     HttpClientModule
